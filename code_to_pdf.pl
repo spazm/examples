@@ -29,7 +29,11 @@ pod2usage(2) unless $result;
 pod2usage(1) if $help;
 pod2usage(-exitstatus => 0, -verbose => 2) if $man;
 
-$output_dir .= $relative_dir . '/' if $relative_dir;
+#make sure relative_dir and output_dir have trailing slash.
+$relative_dir .= '/' if ( $relative_dir && $relative_dir !~ m{/$} );
+$output_dir   .= '/' if ( $ouput_dir !~ m{/$} );
+$output_dir   .= $relative_dir if $relative_dir;
+
 system( 'mkdir', '-p', $output_dir);
 
 #enscript -MLetter sched.pl -Gr2 -p sched.ps
