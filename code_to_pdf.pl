@@ -31,7 +31,7 @@ pod2usage(-exitstatus => 0, -verbose => 2) if $man;
 
 #make sure relative_dir and output_dir have trailing slash.
 $relative_dir .= '/' if ( $relative_dir && $relative_dir !~ m{/$} );
-$output_dir   .= '/' if ( $ouput_dir !~ m{/$} );
+$output_dir   .= '/' if ( $output_dir !~ m{/$} );
 $output_dir   .= $relative_dir if $relative_dir;
 
 system( 'mkdir', '-p', $output_dir);
