@@ -68,7 +68,7 @@ LOAD_SAVED_FILTERS:
 LOAD_FILTER_DATA:
 {
 FILTER:
-    foreach my $filter_name ( @{ $cfg->{filters} } )
+    foreach my $filter_name ( @{ $cfg->{filter} } )
     {
         my $filter_id = $id_for_filter->{$filter_name};
         unless ($filter_id)
